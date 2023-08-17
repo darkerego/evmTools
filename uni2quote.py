@@ -232,7 +232,7 @@ def quote(mdex: MdexClient, token, amount):
 
 
 def main(file: str, output_file: str = None, threshold: float = 0, verbosity: int = 0, network: str = 'heco'):
-    mdex = MdexClient(network, 'keys/anon_31.json', verbosity)
+    mdex = MdexClient(network, 'keys/default_wallet.json', verbosity)
     token_dict = load_json(file)
 
     for acct, data_list in tqdm.tqdm(token_dict.items()):
