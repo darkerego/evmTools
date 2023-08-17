@@ -142,7 +142,7 @@ class MdexClient:
             response = requests.get('https://api.hecoinfo.com/api', params=params, headers=headers)
         else:
             response = requests.get(
-                "https://api.bscscan.com/api?module=stats&action=bnbprice&apikey=94CWDJ1RXIXKJ93C28I2ISH59N644R3X2R")
+                f"https://api.bscscan.com/api?module=stats&action=bnbprice&apikey={os.environ.get('bscan_api_key')}")
         if response.status_code == 200:
             print(response.json())
             if self.network == 'heco':
@@ -228,7 +228,6 @@ class MdexClient:
 
 
 def quote(mdex: MdexClient, token, amount):
-    dotenv.load_dotenv()
     return mdex.quote(web3.Web3.to_checksum_address(token), int(amount))
 
 
@@ -251,6 +250,7 @@ def main(file: str, output_file: str = None, threshold: float = 0, verbosity: in
 
 
 if __name__ == '__main__':
+    dotenv.load_dotenv()
     args = argparse.ArgumentParser()
     args.add_argument('-n', '--network')
     subparsers = args.add_subparsers(dest='command')
