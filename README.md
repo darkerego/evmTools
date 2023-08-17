@@ -43,7 +43,14 @@ So far, I have included:
   - Takes the ouput from the token_scanner.py and then queries a uniswap v2 router (currently supporting pancakeswapv2 and mdex on heco). 
     reports if any of the tokens are worth anything (can be traded for actual money). Beware that you will need to do your own honeypot 
     filtering (although I do have tools for that which I need to upload too!)
-
+- zrxswap.py
+  - Command line tool to interact with ZRX liquidity aggregator. It can provide quotes and do swaps.
+  - TODO: redo argparse to make it easier to use with subparsers. Add support for more networks.
+  - Note: ZRX now requires an API key to use and you need a "business email" to get one ... in other words, you need 
+    to register a domain and set up email forwarding and then use that account in order to get a key ... </eyeroll> ,
+    it is kind of a pain in the ass. Furthermore, the API is now rate limited to hell, so good luck. Oh and OneInch 
+    just did the same thing, but they are even worse, as I could not figure out how to get any API key at all. Great  
+    job ruining something awesome, guys ... 
 
 #### Configuration
 <p>
