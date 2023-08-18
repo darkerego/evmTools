@@ -1,14 +1,32 @@
+import binascii
 import json
 import os
 import time
 
+from eth_account import Account
+from eth_account.signers.local import LocalAccount
 from eth_typing import ChecksumAddress
+from eth_utils import to_checksum_address
 
 
 class Acct:
     def __init__(self, key: (str, bytes, None), address: (str, None, ChecksumAddress)):
         self.key = key
         self.address = address
+
+
+def parse_key(key: str) -> (LocalAccount, Acct, None):
+    try:
+        account = Account.from_key(key)
+    except (ValueError, binascii.Error):
+        try:
+            to_checksum_address(key)
+        except (ValueError, binascii.Error):
+            return None
+        else:
+            return Acct(None, key)
+    else:
+        return account
 
 
 def divide_chunks(l: list, n: int) -> list:

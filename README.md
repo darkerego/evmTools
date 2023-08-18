@@ -10,9 +10,8 @@ this repository.
 
 <p>
 This repository exists for two reasons. First, because I am sure that these utils will help others. And second, 
-because I am trying to build a portfolio in order to make myself more marketable. I really cannot understand why I 
-do not have a cushy corporate job at this point, considering the highly specialized field that I am in, and considering 
-I am pretty darn good at it. Reach out to me at chevisyoung at gmail dotkom if you'd like to hire me. I specialize in 
+because I am trying to build a portfolio in order to make myself more marketable.
+Reach out to me at chevisyoung at gmail dotkom if you'd like to hire me. I specialize in 
 security, blockchain, particularly the Ethereum Virtual Machine.
 </p>
 
