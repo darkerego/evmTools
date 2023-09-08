@@ -50,6 +50,9 @@ So far, I have included:
     it is kind of a pain in the ass. Furthermore, the API is now rate limited to hell, so good luck. Oh and OneInch 
     just did the same thing, but they are even worse, as I could not figure out how to get any API key at all. Great  
     job ruining something awesome, guys ... 
+- Find key
+  - Supply either a single address or list of addresses, along with a list of private keys. Finds the key associated with 
+    the address (if it exists in the input file)
 
 #### Configuration
 <p>
